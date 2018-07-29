@@ -32,7 +32,7 @@
                 
             }
             .added{
-                left: 1200px;
+                left: 1500px;
                 z-index: 2;
             }
 
@@ -41,16 +41,18 @@
     <body>
 
         <p style="color: gold"></p>
-        <div class="panel">
+        <section class="panel">
             <div class="ice"></div>
             <div class='man'></div>
-        </div>
+        </section>
         <script>
             $(function(){
 
                 var oldtime =  0;
                 var newtime = 0;
                 var reference = 0;
+
+                var shift = 500;
               $(document).on('keydown',function(event){
 
                 
@@ -110,13 +112,17 @@
                     }
                 }
                 */
+                
                 $('p').append(':'+current);
                 var gap = current - reference
                 if(gap>500)             //randomize instead of constant 500
                 {
                     $('.panel').append('<div class="ice added"></div>');
                     reference = current;
+                    shift += 1000;
                 }
+
+                $('div.added:last-child').css('left',shift);
                 
                 
               })
