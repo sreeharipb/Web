@@ -23,7 +23,7 @@
             .panel{
                 background-image: url('https://images.alphacoders.com/152/152113.jpg');
                 height:645px;
-                width: 1000px;
+                width: 20000px;
                 top: 0px;
                 position: relative;
                 
@@ -40,10 +40,7 @@
         </div>
         <script>
             $(function(){
-
-
-
-
+                
               $(document).on('keydown',function(event){
 
                 
@@ -51,34 +48,10 @@
                 var posIce = $('.ice').position();
                 var man = $('.man');
                 var ice = $()
-                /*
-                $('p').append('||'+posMan.left+':'+posMan.top);
-                $('p').append('||'+posIce.left+':'+posIce.top);
-                
-                //positon difference
-                var difference = posIce.left-posMan.left;
 
-
-                //width difference
-                var widthdiff = $('.door').width() - $('.man').width();
-                //alert(difference);
-
-                if((difference>$('.man').width())||(difference<=(+1*widthdiff)))
-                {
-                    $(".man").animate({left: '+=50px'});
-                }
-
-                else
-                {
-                    $('.man').animate({top: '+50px'});
-                   //    $('.man').animate({left: '+10px'});
-                    
-                }
-                */
-                //alert(posMan.top);
                 if(event.which==39)
                 {
-                    //alert(posMan.left+' '+posIce.left);
+                
                     if((posMan.left+200<posIce.left)||(posMan.left>posIce.left+100)) 
                     {
 
@@ -88,36 +61,37 @@
                     {
                         $(".man").animate({left: '+=50px'});
                     }
+
+                    if((posMan.left>posIce.left+150)&&(posMan.top==23))
+                    {
+                        $('.man').animate({top: '+=400px'});
+                    }
+
                     
                 }
                 if(event.which==38 && posMan.top==423)
                 {   
-                    //alert('inside climb'+state);
                     $('.man').animate({top: '-=400px'});
 
-                    if(posMan.left+200<posIce.left)
+                    if((posMan.left+200<posIce.left)||(posMan.left>posIce.left+150))
                     {
                         $('.man').animate({top: '+=400px'});    
                     }
                     
                 }
                 
+                /*
                 if(event.which==40 && posMan.top==23)
                 {
 
-                    //alert('inside jump'+state);
+                    
                     if(posMan.left+100>posIce.left+250)
                     {
                         $('.man').animate({top: '+=400px'});
                     }
                 }
-                //alert(state);
+                */
                 
-               
-                
-                
-              
-                  
               })
 
 
