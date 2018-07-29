@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Animation</title>
+        <title>Zanimation</title>
         <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js'></script>
         <style>
 
@@ -40,44 +40,51 @@
         </div>
         <script>
             $(function(){
-                
+
+                var oldtime =  0;
+                var newtime = 0;
               $(document).on('keydown',function(event){
 
                 
                 var posMan = $('.man').position();  
                 var posIce = $('.ice').position();
                 var man = $('.man');
-                var ice = $()
-
-                if(event.which==39)
-                {
+                var ice = $('.ice');
+                newtime = event.timeStamp;
+                var diff = newtime - oldtime;
+                //alert(diff);
                 
+                //$('.man').animate({left: '+=0px'});
+                if(event.which==39&&diff>=100)
+                {
+
                     if((posMan.left+200<posIce.left)||(posMan.left>posIce.left+100)) 
                     {
 
-                        $(".man").animate({left: '+=50px'});    
+                        $(".man").animate({left: '+=50px'},100);    //duration    
                     }
                     else if(posMan.top==23)
                     {
-                        $(".man").animate({left: '+=50px'});
+                        $(".man").animate({left: '+=50px'},100);
                     }
 
                     if((posMan.left>posIce.left+150)&&(posMan.top==23))
                     {
-                        $('.man').animate({top: '+=400px'});
+                        $('.man').animate({top: '+=400px'},100);
                     }
 
-                    
+                    oldtime = newtime;      //updation
                 }
-                if(event.which==38 && posMan.top==423)
+                if(event.which==38 && posMan.top==423 && diff>=200)
                 {   
-                    $('.man').animate({top: '-=400px'});
+                    $('.man').animate({top: '-=400px'}),200;
 
                     if((posMan.left+200<posIce.left)||(posMan.left>posIce.left+150))
                     {
-                        $('.man').animate({top: '+=400px'});    
+                        $('.man').animate({top: '+=400px'},200);    
                     }
                     
+                    oldtime = newtime;
                 }
                 
                 /*
