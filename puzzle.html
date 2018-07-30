@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script>        
+
+        <style>
+            .grid-container{
+                display: grid;
+                grid-template-columns: auto auto auto;
+                background-color: burlywood;
+                padding: 10px;
+                border:indigo;
+            }
+            .grid-item {
+                background-color: rgba(255, 255, 255, 0.8);
+                border: 1px solid rgba(0, 0, 0, 0.8);
+                padding: 20px;
+                font-size: 30px;
+                color: firebrick;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>  
+            <h2 style="text-align: center">Score:</div>
+            <div class="grid-container">
+                    <div id='1' class="grid-item">2</div>
+                    <div id='2' class="grid-item">3</div>
+                    <div id='3' class="grid-item">8</div>  
+                    <div id='4' class="grid-item">1</div>
+                    <div id='5' class="grid-item"></div>
+                    <div id='6' class="grid-item">6</div>  
+                    <div id='7' class="grid-item">7</div>
+                    <div id='8' class="grid-item">5</div>
+                    <div id='9' class="grid-item">4</div>  
+            </div>
+
+            <script>
+                
+                $(function(){
+
+                    //var clicks = 0;
+
+                
+                    $('#1').click(function(){
+                
+                        var current = $('#1');
+                        var target = null;
+                        var value = current.text();
+                        //alert($('#2').text());
+                        if($('#2').text().length == 0)
+                        {
+                            target = $('#2');
+                        }
+                        else if($('#4').text().length == 0)
+                        {
+                            target = $('#4');
+                        }
+
+                        
+                        target.text(value);
+                        current.text("");                        
+                        
+                    });
+
+                    $('#2').click(function(){
+                
+                var current = $('#2');
+                var target = null;
+                var value = current.text();
+                //alert($('#2').text());
+                if($('#1').text().length == 0)
+                {
+                    target = $('#1');
+                }
+                else if($('#3').text().length == 0)
+                {
+                    target = $('#3');
+                }
+                else if($('#5').text().length == 0)
+                {
+                    target = $('#5');
+                }
+
+                
+                target.text(value);
+                current.text("");                        
+                
+            });
+
+
+
+            $('#3').click(function(){
+                
+                var current = $('#3');
+                var target = null;
+                var value = current.text();
+                //alert($('#2').text());
+                if($('#2').text().length == 0)
+                {
+                    target = $('#2');
+                }
+                else if($('#6').text().length == 0)
+                {
+                    target = $('#6');
+                }
+
+                
+                target.text(value);
+                current.text("");                        
+                
+            });
+
+            $('#4').click(function(){
+                
+                var current = $('#4');
+                var target = null;
+                var value = current.text();
+                //alert($('#2').text());
+                if($('#1').text().length == 0)
+                {
+                    target = $('#1');
+                }
+                else if($('#7').text().length == 0)
+                {
+                    target = $('#7');
+                }
+                else if($('#5').text().length == 0)
+                {
+                    target = $('#5');
+                }
+
+                
+                target.text(value);
+                current.text("");                        
+                
+            });
+
+            $('#5').click(function(){
+                
+                var current = $('#5');
+                var target = null;
+                var value = current.text();
+                //alert($('#2').text());
+                if($('#2').text().length == 0)
+                {
+                    target = $('#2');
+                }
+                else if($('#4').text().length == 0)
+                {
+                    target = $('#4');
+                }
+                else if($('#6').text().length == 0)
+                {
+                    target = $('#6');
+                }
+                else if($('#8').text().length == 0)
+                {
+                    target = $('#8');
+                }
+
+                
+                target.text(value);
+                current.text("");                        
+                
+            });
+
+            $('#6').click(function(){
+                
+                var current = $('#6');
+                var target = null;
+                var value = current.text();
+                //alert($('#2').text());
+                if($('#9').text().length == 0)
+                {
+                    target = $('#9');
+                }
+                else if($('#5').text().length == 0)
+                {
+                    target = $('#5');
+                }
+                else if($('#3').text().length == 0)
+                {
+                    target = $('#3');
+                }
+                
+                target.text(value);
+                current.text("");                        
+                
+            });
+
+            $('#7').click(function(){
+                
+                var current = $('#7');
+                var target = null;
+                var value = current.text();
+                //alert($('#2').text());
+                if($('#4').text().length == 0)
+                {
+                    target = $('#4');
+                }
+                else if($('#8').text().length == 0)
+                {
+                    target = $('#8');
+                }
+                
+                target.text(value);
+                current.text("");                        
+                
+            });
+
+            $('#8').click(function(){
+                
+                var current = $('#8');
+                var target = null;
+                var value = current.text();
+                //alert($('#2').text());
+                if($('#9').text().length == 0)
+                {
+                    target = $('#9');
+                }
+                else if($('#5').text().length == 0)
+                {
+                    target = $('#5');
+                }
+                else if($('#7').text().length == 0)
+                {
+                    target = $('#7');
+                }
+                
+                target.text(value);
+                current.text("");                        
+                
+            });
+
+            $('#9').click(function(){
+                
+                var current = $('#9');
+                var target = null;
+                var value = current.text();
+                //alert($('#2').text());
+                if($('#6').text().length == 0)
+                {
+                    target = $('#6');
+                }
+                else if($('#8').text().length == 0)
+                {
+                    target = $('#8');
+                }
+                
+                target.text(value);
+                current.text("");                        
+                
+            });
+
+            
+
+
+
+
+
+
+                });
+                
+            </script>
+
+    </body>
+
+</html>
