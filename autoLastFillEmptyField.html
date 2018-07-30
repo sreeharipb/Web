@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <style>
+            .textbox{
+                float: left;
+                clear: left;
+            }
+            .spldiv{
+                float: left;
+                clear: left;
+            }
+            #resultbox{
+                float: left;
+                clear: left;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <form>
+             <input type="text" class="textbox" style="margin-bottom:30px"></input>
+             <input type="text" class="textbox" style="margin-bottom:30px"></input>
+             <input type="text" class="textbox" style="margin-bottom:30px"></input>
+             <input type="text" class="textbox" style="margin-bottom:30px"></input>
+             <div class="spldiv" style="margin-bottom:30px">---------------------------------------------</div>
+             <input type="text" id="resultbox" style="margin-bottom:30px"></input>
+        </form>
+        
+        <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js'></script>
+        <script>
+
+            $(function(){
+                var t = 4;
+                //alert(parseInt());
+
+                $(document).on('mouseenter','.textbox',function(){
+                    
+                    var count = 0;
+                    $('.textbox').each(function()
+                    {
+                        count =  count +($.trim($(this).val())==''? 1 : 0);
+                    });
+                   // alert(count);
+
+                    if(count==1)
+                    {
+                        //alert(count);
+                        if($.trim($('#resultbox').val())!='')
+                        {
+                            alert(count);
+                            var sum=0;
+                            var total = +$('#resultbox').val();
+                            $('.textbox').each(function(){
+                                sum = +sum + +$(this).val(); 
+                            });
+                            //alert(sum);
+                            $(this).val(total-sum);
+                        }  
+                    }
+                });
+                
+            });
+        </script>
+    </body>
+</html>
