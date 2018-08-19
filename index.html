@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Insight | Future finder</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width" initial-scale="1">
+        <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/4130D7D2-8CB5-D54E-B0AD-0CE9B84D76A1/main.js" charset="UTF-8"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+           </head>
+    <body>
+        <div>
+            <div class="navBar">
+                <div id="site">
+                    <h1>Insight</h1>
+                </div>
+                <div class="navItems">
+                    <ol>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="aboutus" href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a class="abouttest" href="#">About Test</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="aboutuscontent">
+                    <h1>About us</h1>
+                    <blockquote>
+                        Students feel difficult to choose the right career path after completing their schooling. In many circumstances, students select their career based on the marks and external opinions. And after going to the college they struggle a lot to sustain in the stream they have chosen.
+                        This web application mainly concentrates on the students who have completed their high school and are to go for higher studies. In this application we conduct a test known as RAISEC test. In this we use the questions which are created by John Holland. In this test, fortytwo  questions will be asked. Based on the responses, the student's interests and willingness are evaluated. Based on this, certain suggestions are given to the students that help them in choosing their ideal stream.
+                    </blockquote>
+                    <button type="button" class="close">Close</button>
+                </div>
+                <div class="abouttestcontent">
+                    <h1>About Test</h1>
+                    <blockquote>
+                        The Holland Codes or the Holland Occupational Themes (RIASEC) refers to a theory of careers and vocational choice (based upon personality types) that was initially developed by American psychologist John L. Holland.
+
+                        The US Department of Labor ETA has been using an updated and expanded version of the RIASEC model in the "Interests" section of its free online database, The Occupational Information Network (O*NET) since its inception during the late 1990s.
+                        <h2>Instructions for test</h2>
+                        -Your are able to attend the questions only once<br>
+                        -Only after attending all the questions,the submit button is enabled<br>
+                        -Accurancy of the test is based on how honestly you answer<br>
+                    </blockquote>
+                    <button type="button" class="close">Close</button>
+                </div>
+                <div class="openCard">
+                    <blockquote>
+                        <h1> To get the Insight of you</h1>
+                    </blockquote>
+                    <button id="nextPage" onclick="location.href='nextPage.html';">Take the test</button>
+                </div>
+            </div>
+        </div>
+        
+
+        <script>
+            $(document).ready(function () {
+                $('.aboutus').click(function () {
+                    $('.abouttestcontent').slideUp("slow");
+                    $('.aboutuscontent').slideDown("slow");
+                });
+                $('.close').click(function () {
+                    $('.aboutuscontent').slideUp("slow");
+                });
+            });
+            $(document).ready(function () {
+                $('.abouttest').click(function () {
+                    $('.aboutuscontent').slideUp("slow");
+                    $('.abouttestcontent').slideDown("slow");
+                });
+                $('.close').click(function () {
+                    $('.abouttestcontent').slideUp("slow");
+                });
+            });
+
+
+        </script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
